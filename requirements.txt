@@ -1,0 +1,12 @@
+pandas
+numpy
+yfinance
+pandas_datareader
+warnings
+statsmodels.api
+datetime
+plotly.express
+plotly.figure_factory
+datapane
+altair
+vega_datasets
