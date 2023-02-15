@@ -20,4 +20,4 @@ jobs:
             - uses: datapane/build-action@v2
               with:
                   script: "dashboard.py"
-                  token: ${{ secrets.Datapane }}
+                  token: ${{ secrets.datapane }}
