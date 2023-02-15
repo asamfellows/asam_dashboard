@@ -2,11 +2,11 @@ pandas
 numpy
 yfinance
 pandas_datareader
-warnings
-statsmodels.api
-datetime
+statsmodels
 plotly.express
-plotly.figure_factory
+plotly
 datapane
 altair
 vega_datasets
+datetime
+matplotlib
