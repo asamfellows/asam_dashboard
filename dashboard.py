@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import math
 import yfinance as yf
-import datetime
+from datetime import date, timedelta
 from pandas_datareader import data as pdr
 import warnings
 import statsmodels.api as sm
@@ -11,6 +11,12 @@ import plotly.figure_factory as ff
 import datapane as dp
 import altair as alt
 from vega_datasets import data
+import matplotlib.pyplot as plt
+
+from PIL import Image
+import urllib
+import os
+
 yf.pdr_override()
 
 
