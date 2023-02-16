@@ -205,10 +205,9 @@ value_matrix['Ret_ex_dividend']= np.round(((value_matrix['Value_ex_dividend']/va
 
 Total_Cost = total_cost.reset_index()
 Transactions = transactions.copy()
-Transactions = Transactions.rename(columns={'Column1':'ticker'})
 Positions = postions_calc.copy()
 vw_total_return_matrix = vw_total_return_matrix.reset_index()
-allstock_alpha_matrix = allstock_alpha_matrix.reset_index().rename(columns={'index': 'Column1'})
+allstock_alpha_matrix = allstock_alpha_matrix.reset_index().rename(columns={'index': 'ticker'})
 alpha_matrix = alpha_matrix.reset_index().rename(columns={'index': 'Column1'})
 Cum_Dividends = Cum_Dividends.reset_index()
 ew_daily_return_matrix = ew_daily_return_matrix.reset_index().rename(columns={'index': 'Column1'})
