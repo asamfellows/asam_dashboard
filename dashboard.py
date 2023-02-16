@@ -372,9 +372,24 @@ ax.set_title(
 
 ax.set_axis_off()
 
-dp.Report(
-    fig,
-    fig2
-).upload(name='ASAM_Dashboard')
+Positions = postions_calc.copy()
+Positions['Purchase'] = Positions['Purchase'].apply(format_currency)
+Positions['Cost'] = Positions['Cost'].apply(format_currency)
+Positions['Price'] = Positions['Price'].apply(format_currency)
+Positions['Value'] = Positions['Value'].apply(format_currency)
+Positions['Gain $'] = Positions['Gain $'].apply(format_currency)
+Positions['Gain %'] = Positions['Gain %'].map(round_to_2_decimal_places)
+Positions['Overall_retruns'] = Positions['Overall_retruns'].map(round_to_2_decimal_places)
+
+alpha_table= dp.DataTable(allstock_alpha_matrix[['ticker','alpha','beta','sharpe_ratio']])
+
+app =dp.App(
+    dp.Page(title="Total Returns", blocks=[fig,fig2]),
+    dp.Page(title="Dashboard", blocks=[dp.DataTable(Dashboard2.set_index(Dashboard2.columns[9]).T)]),
+    dp.Page(title="Positions", blocks=[Positions]),
+    dp.Page(title="Stock Regressions", blocks=[alpha_table])
+)
+
+app.upload(name='ASAM_Dashboard')
 
 
