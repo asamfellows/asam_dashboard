@@ -67,8 +67,7 @@ total_cost.loc['ASAM'] =total_cost.sum()
 
 tickers_list = postions_calc.Tickers.unique().tolist()
 # Fetch the data
-# daily_data = yf.download(tickers_list , start=analysis_end_date ,period= '1d' ,end= analysis_end_date_plusone )['Close'].dropna(axis=0,how='all')
-daily_data = yf.download(tickers_list , start=analysis_end_date ,period= '1d' ,end= analysis_end_date_plusone )['Close'].drop(["{0} 00:00:00".format(analysis_end_date_plusone)], axis=1, errors='ignore')
+daily_data = yf.download(tickers_list , start=analysis_end_date ,period= '1d' ,end= analysis_end_date_plusone )['Close'].dropna(axis=0,how='all')
 daily_data_transpose = daily_data.transpose().reset_index().rename(columns={'index':'Tickers'})
 postions_calc =postions_calc.merge(daily_data_transpose,left_on='Tickers',right_on='Tickers', how ='left')
 postions_calc.columns = ['Group','Tickers','Shares','Purchase','Cost','Price']
