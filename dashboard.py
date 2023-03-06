@@ -405,11 +405,9 @@ figtemp.update_layout(title='Portfolio Performance vs. S&P500 and Russell Indice
                   title_x=0.5)
 
 figtemp.update_layout(legend=dict(
-    orientation="v",
-    yanchor="bottom",
-    y=1,
-    xanchor="right",
-    x=1,))
+    orientation="h",
+    y=-.05,
+    x=.2,))
 
 figtemp.update_layout(legend_title_text=None)
 figtemp.update_traces(mode="lines", hovertemplate=None)
