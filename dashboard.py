@@ -390,6 +390,6 @@ app =dp.App(
     dp.Page(title="Stock Regressions", blocks=[alpha_table])
 )
 
-app.upload(name='ASAM_Dashboard')
+app.upload(name='ASAM_Dashboard',embed_mode=True)
 
 
