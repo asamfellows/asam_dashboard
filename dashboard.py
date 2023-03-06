@@ -245,7 +245,7 @@ fig.update_layout(legend=dict(
     orientation="h",
     yanchor="bottom",
     y=1,
-    xanchor="center",
+    xanchor="right",
     x=1,))
 
 fig.update_layout(legend_title_text=None)
@@ -394,6 +394,38 @@ app =dp.App(
 
 app.upload(name='ASAM_Dashboard', embed_mode=True,  public=True)
 
-fig.update_layout(margin = dict(t=50, l=25, r=25, b=25))
 
-py.plot(fig, filename = 'basic-line', auto_open=False)
+### Band-Aid Solution Until Permanent One is Found
+figtemp = px.line(line_chart, x='Date', y=['SP500','Russell','Low Beta, High Int. Cov.','High Div. Yield, Low Lev., Low P/E','Net Income Growth','Winsorized Low Beta'])
+figtemp.update_layout(title='Portfolio Performance vs. S&P500 and Russell Indices',
+                   xaxis_title='Date',
+                   yaxis_title='Strategy or Index',
+                  title_x=0.5)
+
+figtemp.update_layout(legend=dict(
+    orientation="h",
+    yanchor="bottom",
+    y=1,
+    xanchor="right",
+    x=1,))
+
+figtemp.update_layout(legend_title_text=None)
+figtemp.update_traces(mode="lines", hovertemplate=None)
+
+figtemp.update_layout(hovermode="x unified")
+
+figtemp.update_layout(hoverlabel = dict(
+    bgcolor = "black",
+    font_color = "white",
+    font_size = 11))
+
+figtemp.update_layout(legend=dict(title_font_family="Times New Roman",
+                              font=dict(size= 9.3)))
+
+
+figtemp.update_layout({
+'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+})
+
+py.plot(figtemp, filename = 'basic-line', auto_open=False)
