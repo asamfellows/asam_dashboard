@@ -13,6 +13,7 @@ import altair as alt
 from vega_datasets import data
 import matplotlib.pyplot as plt
 import chart_studio.plotly as py
+import chart_studio
 
 from PIL import Image
 import urllib
