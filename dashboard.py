@@ -12,12 +12,14 @@ import datapane as dp
 import altair as alt
 from vega_datasets import data
 import matplotlib.pyplot as plt
+import chart_studio
 
 from PIL import Image
 import urllib
 import os
 
 yf.pdr_override()
+chart_studio.tools.set_credentials_file(username='asamfellows', api_key='3Oh2VmHwaLb8lpIXDwDd')
 
 
 column_names = ['Group', 'Date', 'Security', 'Action', 'Quantity', 'Price', 'Total']
@@ -275,7 +277,6 @@ mapper = pd.DataFrame({
     'Team':['Group 4','Group 3','Group 2','Group 1','ASAM'],
 })
 
-
 dashboard = Total_Cost.merge(value_matrix[['Column1','Ret','Value','Value_ex_dividend','Ret_ex_dividend']], left_on='Group', right_on='Column1')
 Dashboard = dashboard.merge(alpha_matrix[['Column1','sharpe_ratio','alpha','beta']],left_on='Group',right_on='Column1',how='left')
 Dashboard = Dashboard[['Group','Cost','alpha','beta','Ret','Value','Value_ex_dividend','Ret_ex_dividend','sharpe_ratio']]
@@ -392,4 +393,4 @@ app =dp.App(
 
 app.upload(name='ASAM_Dashboard', embed_mode=True,  public=True)
 
-
+py.plot(fig, filename = 'basic-line', auto_open=False)
