@@ -12,7 +12,7 @@ import datapane as dp
 import altair as alt
 from vega_datasets import data
 import matplotlib.pyplot as plt
-import chart_studio
+import chart_studio as py
 
 from PIL import Image
 import urllib
