@@ -394,4 +394,6 @@ app =dp.App(
 
 app.upload(name='ASAM_Dashboard', embed_mode=True,  public=True)
 
+fig.update_layout(margin = dict(t=50, l=25, r=25, b=25))
+
 py.plot(fig, filename = 'basic-line', auto_open=False)
