@@ -396,14 +396,16 @@ app.upload(name='ASAM_Dashboard', embed_mode=True,  public=True)
 
 
 ### Band-Aid Solution Until Permanent One is Found
-figtemp = px.line(line_chart, x='Date', y=['SP500','Russell','Low Beta, High Int. Cov.','High Div. Yield, Low Lev., Low P/E','Net Income Growth','Winsorized Low Beta'])
+line_chart2 = line_chart.rename(columns= {'Low Beta, High Int. Cov.':'Group 1','High Div. Yield, Low Lev., Low P/E':'Group 2','Net Income Growth':'Group 3', 'Winsorized Low Beta':'Group 4'})
+
+figtemp = px.line(line_chart2, x='Date', y=['SP500','Russell','Low Beta, High Int. Cov.','Group 2','Net Income Growth','Winsorized Low Beta'])
 figtemp.update_layout(title='Portfolio Performance vs. S&P500 and Russell Indices',
                    xaxis_title='Date',
                    yaxis_title='Strategy or Index',
                   title_x=0.5)
 
 figtemp.update_layout(legend=dict(
-    orientation="h",
+    orientation="v",
     yanchor="bottom",
     y=1,
     xanchor="right",
