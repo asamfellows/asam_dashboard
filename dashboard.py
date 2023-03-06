@@ -245,7 +245,7 @@ fig.update_layout(legend=dict(
     orientation="h",
     yanchor="bottom",
     y=1,
-    xanchor="right",
+    xanchor="center",
     x=1,))
 
 fig.update_layout(legend_title_text=None)
