@@ -386,7 +386,7 @@ Positions['Overall_retruns'] = Positions['Overall_retruns'].map(round_to_2_decim
 alpha_table= dp.DataTable(allstock_alpha_matrix[['ticker','alpha','beta','sharpe_ratio']])
 
 app =dp.App(
-    dp.Page(title="Total Returns", blocks=[fig,fig2]),
+    dp.Page(title="Total Returns", blocks=[fig]),
     dp.Page(title="Dashboard", blocks=[dp.DataTable(Dashboard2.set_index(Dashboard2.columns[9]).T)]),
     dp.Page(title="Positions", blocks=[Positions]),
     dp.Page(title="Stock Regressions", blocks=[alpha_table])
