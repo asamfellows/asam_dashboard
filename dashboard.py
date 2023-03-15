@@ -394,8 +394,8 @@ app =dp.App(
 
 app2 = dp.App(dp.Plot(fig2))
 
-app2.upload(name='At_A_Glance', embed_mode=True,  public=True)
-app.upload(name='ASAM_Dashboard', embed_mode=True,  public=True)
+app2.upload(name='At_A_Glance', embed_mode=True,  publish=True)
+app.upload(name='ASAM_Dashboard', embed_mode=True,  publish=True)
 
 
 ### Band-Aid Solution Until Permanent One is Found
