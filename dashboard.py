@@ -392,10 +392,9 @@ app =dp.App(
     dp.Page(title="Stock Regressions", blocks=[alpha_table])
 )
 
+app2 = dp.Plot(fig2, name="At a Glance")
 
-
-dp.upload([dp.Plot(fig2)], name="At A Glance")
-
+app2.upload(name='At_A_Glance', embed_mode=True,  public=True)
 app.upload(name='ASAM_Dashboard', embed_mode=True,  public=True)
 
 
