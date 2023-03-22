@@ -399,37 +399,37 @@ app2.upload(name='At_A_Glance', embed_mode=True,  publish=True)
 app.upload(name='ASAM_Dashboard', embed_mode=True,  publish=True)
 
 
-### Band-Aid Solution Until Permanent One is Found
-line_chart2 = line_chart.rename(columns= {'Low Beta, High Int. Cov.':'Group 1','High Div. Yield, Low Lev., Low P/E':'Group 2','Net Income Growth':'Group 3', 'Winsorized Low Beta':'Group 4'})
+# ### Band-Aid Solution Until Permanent One is Found
+# line_chart2 = line_chart.rename(columns= {'Low Beta, High Int. Cov.':'Group 1','High Div. Yield, Low Lev., Low P/E':'Group 2','Net Income Growth':'Group 3', 'Winsorized Low Beta':'Group 4'})
 
-figtemp = px.line(line_chart2, x='Date', y=['SP500','Russell','Group 1','Group 2','Group 3','Group 4'])
-figtemp.update_layout(title='Portfolio Performance vs. S&P500 and Russell Indices',
-                   xaxis_title='Date',
-                   yaxis_title='Strategy or Index',
-                  title_x=0.5)
+# figtemp = px.line(line_chart2, x='Date', y=['SP500','Russell','Group 1','Group 2','Group 3','Group 4'])
+# figtemp.update_layout(title='Portfolio Performance vs. S&P500 and Russell Indices',
+#                    xaxis_title='Date',
+#                    yaxis_title='Strategy or Index',
+#                   title_x=0.5)
 
-figtemp.update_layout(legend=dict(
-    orientation="h",
-    y=-.05,
-    x=.2,))
+# figtemp.update_layout(legend=dict(
+#     orientation="h",
+#     y=-.05,
+#     x=.2,))
 
-figtemp.update_layout(legend_title_text=None)
-figtemp.update_traces(mode="lines", hovertemplate=None)
+# figtemp.update_layout(legend_title_text=None)
+# figtemp.update_traces(mode="lines", hovertemplate=None)
 
-figtemp.update_layout(hovermode="x unified")
+# figtemp.update_layout(hovermode="x unified")
 
-figtemp.update_layout(hoverlabel = dict(
-    bgcolor = "black",
-    font_color = "white",
-    font_size = 11))
+# figtemp.update_layout(hoverlabel = dict(
+#     bgcolor = "black",
+#     font_color = "white",
+#     font_size = 11))
 
-figtemp.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 9.3)))
+# figtemp.update_layout(legend=dict(title_font_family="Times New Roman",
+#                               font=dict(size= 9.3)))
 
 
-figtemp.update_layout({
-'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-})
+# figtemp.update_layout({
+# 'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+# 'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+# })
 
-py.plot(figtemp, filename = 'basic-line', auto_open=False)
+# py.plot(figtemp, filename = 'basic-line', auto_open=False)
