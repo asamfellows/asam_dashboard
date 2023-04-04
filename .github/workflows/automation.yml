@@ -3,7 +3,7 @@ run-name: ASAM Dashboard Update
 on: 
     schedule:
          #run everyday at noon
-        - cron: "0 20 * * ?"
+        - cron: "0 01 * * ?"
     workflow_dispatch:
 jobs:
     build_app:
