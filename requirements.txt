@@ -11,3 +11,5 @@ vega_datasets
 datetime
 matplotlib
 chart_studio
+urllib3==1.25.11
+requests-toolbelt==0.9.1
