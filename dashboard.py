@@ -31,7 +31,7 @@ chart_studio.tools.set_credentials_file(username='asamfellows', api_key='3Oh2VmH
 
 
 ## Autopull excel data
-raw_url = 'https://github.com/asamfellows/asam_dashboard/raw/main/ASAM_21-22_Tracker_2_1.xlsx'
+raw_url = 'https://raw.githubusercontent.com/asamfellows/asam_dashboard/main/ASAM_21-22_Tracker_2_1.xlsx'
 
 # Download the Excel file using requests
 response = requests.get(raw_url)
